@@ -23,6 +23,7 @@ dependencies = [
 
 [project.optional-dependencies]
 ml = ["scikit-learn>=1.3"]
+gui = ["pillow>=10"]
 dev = [
     "pytest>=7.4",
     "pytest-cov",

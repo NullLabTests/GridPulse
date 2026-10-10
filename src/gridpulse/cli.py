@@ -45,6 +45,18 @@ def check_sources() -> None:
 
 
 @main.command()
+@click.option("--data", type=click.Path(exists=True, path_type=Path), default=None,
+              help="Optional analysis-ready Parquet to open on startup.")
+@click.option("--demo", is_flag=True,
+              help="Auto-play a scripted parameter tour (used for screenshots/video).")
+def gui(data: Path | None, demo: bool) -> None:
+    """Launch the interactive desktop GUI (Tkinter)."""
+    from gridpulse.gui import launch
+
+    launch(demo=demo, data=data)
+
+
+@main.command()
 @click.argument("csv_path", type=click.Path(exists=True, path_type=Path))
 @click.option("--out", type=click.Path(path_type=Path), default=Path("data/processed/analysis.parquet"))
 def ingest(csv_path: Path, out: Path) -> None:
@@ -96,9 +108,7 @@ def run(config: Path, data: Path | None, out_dir: Path, synthetic: bool) -> None
 
     # Chronological split
     train, val, test = chronological_split(df, train_frac=0.6, val_frac=0.2)
-    # Fit thresholds on train+val only
-    fit_series = pd.concat([train, val]).set_index("start_time")["mean_customers"]
-    # For simplicity, use fixed thresholds from config; in production would tune on val
+    # Use fixed thresholds from config; in production would tune on val
     baseline = trailing_window_baseline(
         series,
         window=cfg["detectors"]["baseline"]["window"],
