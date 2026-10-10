@@ -50,3 +50,6 @@ logs/
 !data/raw/checksums.txt
 !data/raw/*.docx
 !data/provenance/
+
+# Stray release snapshots at repo root
+/*.zip
