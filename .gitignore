@@ -1,0 +1,52 @@
+# Gitignore for GridPulse
+
+# Local dependency targets and venvs
+.deps/
+.venv/
+venv/
+*.egg-info/
+.eggs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Data
+data/raw/*.zip
+data/raw/*.csv
+data/processed/
+data/cache/
+*.parquet
+*.feather
+
+# Experiments and large artifacts
+experiments/*/artifacts/
+experiments/*/predictions/
+experiments/*/plots/
+*.html
+!docs/*.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Keep provenance and checksums
+!data/raw/checksums.txt
+!data/raw/*.docx
+!data/provenance/

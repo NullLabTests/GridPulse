@@ -1,0 +1,23 @@
+{
+  "project": "gridpulse",
+  "sources": [
+    {
+      "attribution": "She, Buxin, et al. Event-correlated Outage Dataset in America. Pacific Northwest National Laboratory, 1 October, 2024, Open Energy Data Initiative (OEDI). https://data.openei.org/submissions/6458.",
+      "dataset_version": "R1 (retrieved 2026-10-10)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "local_path": "data/raw/Outage_Dataset_R1.zip",
+      "notes": "Inspected guidelines and disclaimer. Schema verified against merged CSVs. Primary candidate for GridPulse.",
+      "original_filename": "Outage_Dataset_R1.zip",
+      "publisher": "Pacific Northwest National Laboratory",
+      "redistribution_restrictions": "Allowed under CC BY 4.0 with attribution. Large raw files gitignored.",
+      "retrieval_timestamp": "2026-10-10T18:06:29.186462+00:00",
+      "sha256": "44557bae7a5c8e02c611a14f75fe9e123d81d286f700b9fd88ac538edd910fe7",
+      "size_bytes": 31260449,
+      "source_id": "openei_outage_dataset_r1",
+      "url": "https://data.openei.org/submissions/6458"
+    }
+  ],
+  "updated": "2026-10-10T18:06:29.227018+00:00",
+  "version": "0.1.0"
+}

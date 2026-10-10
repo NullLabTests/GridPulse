@@ -1,0 +1,27 @@
+# GridPulse M1 benchmark configuration
+# All thresholds and parameters are fixed; no test-set contamination.
+
+random_seed: 42
+
+proxy_percentile: 95.0
+proxy_min_value: 1000.0
+
+split:
+  train_frac: 0.6
+  val_frac: 0.2
+  # remainder is test
+
+detectors:
+  baseline:
+    window: 30
+    threshold_std: 3.0
+    min_periods: 5
+  mad:
+    window: 30
+    threshold_mad: 5.0
+    min_periods: 5
+    zero_dispersion_policy: skip   # skip | flag_all | flag_none
+
+evaluation:
+  metrics: [precision, recall, f1, false_positives_per_day]
+  report_detection_delay: true
